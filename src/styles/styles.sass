@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
+
+*
+  box-sizing: border-box
+  font-family: "Noto Sans", serif
+  margin: 0
+  padding: 0
+
+body
+  background-color: #0f0f0f
+  color: #fafafa
+
+h2
+  font-weight: 600
+  font-size: 74px
+  line-height: 60px
+
+a
+  text-decoration: none
+  color: inherit
+  transition: .3s
+  &:hover
+    opacity: .8
+
+ul
+  list-style: none
+
+.container
+  padding: 0 20px
+  width: 100%
+  margin: 0 auto
+  max-width: 1240px
+
+.blurred-bg
+  backdrop-filter: blur(35px)
+
+.custom-hr
+  height: 1px
+  width: 100%
+  background: linear-gradient(270deg, rgb(15, 15, 15) 0%, rgb(250, 250, 250) 37.5%, rgb(15, 15, 15) 100%)
+  opacity: .4
+  margin: 20px 0
+
+
+.header
+  position: fixed
+  z-index: 25
+  width: 100%
+  transition: 0.3s
+
+  &__inner
+    display: flex
+    align-items: center
+    height: 100px
+
+
+.navbar
+  display: flex
+  justify-content: space-between
+
+  &__left
+    display: flex
+    gap: 100px
+    align-items: center
+
+  &__logo
+    &_link
+
+    &_img
+
+
+  &__city-selection
+
+  &__right
+
+  &__navigation
+
+.city-selection
+  display: flex
+  align-items: center
+  gap: 8px
+  border: 1px solid grey
+  border-radius: 10px
+  height: 40px
+  padding: 9px 14px 7px 17px
+
+  &:hover
+    border: 1px solid #adff2f
+
+  &__location
+    display: flex
+    gap: 4px
+    align-items: center
+
+  &__location-img
+    img
+      height: 16px
+      aspect-ratio: 1
+      filter: invert(80%) sepia(96%) saturate(400%) hue-rotate(25deg) brightness(101%) contrast(101%)
+
+  &__city
+    font-size: 12px
+    font-weight: bold
+    color: #fafafa
+
+  &__arrow
+    img
+      filter: invert(53%) sepia(1%) saturate(2351%) hue-rotate(314deg) brightness(95%) contrast(78%)
+
+.navigation
+  display: flex
+  gap: 55px
+  align-items: center
+  &__menu
+
+  &__buttons
+    display: flex
+    align-items: center
+    gap: 10px
+
+  &__btn
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 6px
+    border-radius: 50%
+    border: 1px solid transparent
+
+    &:hover
+      border: 1px solid #adff2f
+
+
+  &__btn-img
+    height: 22px
+    aspect-ratio: 1
+    filter: invert(100%) sepia(36%) saturate(2%) hue-rotate(317deg) brightness(108%) contrast(96%)
+
+.menu
+  display: flex
+  gap: 40px
+
+  &__item
+    font-weight: bold
+    color: #fafafa
+
+.slider
+  height: 100vh
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)
+
+
+
+.impressions
+  &__inner
+
+  &__title
+
+  &__gallery
+    margin: 40px 0 80px 0
+
+.gallery
+  display: grid
+  grid-template-columns: repeat(5, 1fr)
+
+  &__item
+    width: 1fr
+    height: 1fr
+    object-fit: cover
+    transition: 0.3s
+    overflow: hidden
+    position: relative
+
+  &__item-link
+
+  &__image
+    width: 100%
+    height: 100%
+    object-fit: cover
+    transition: transform 0.3s ease
+    &:hover
+      transform: scale(1.05)
+
+.footer
+  &__inner
+
+  &__navigation
+    display: flex
+    gap: 20px
+    justify-content: space-between
+    margin: 70px 0
+
+  &__column
+
+  &__payment-socials
+    display: flex
+    gap: 40px
+    justify-content: space-between
+    margin: 60px 0 70px
+
+  &__payment-systems
+
+  &__socials
+
+  &__partners
+    margin: 60px 0 70px
+
+
+  &__copyright
+    margin: 40px 0 50px
+
+.footer-column
+  display: flex
+  flex-direction: column
+  gap: 40px
+  font-weight: bold
+  font-size: 16px
+  line-height: 20px
+
+  &__title
+        color: #777
+
+  &__list
+    display: flex
+    flex-direction: column
+    gap: 28px
+    margin: 0
+    padding: 0
+
+  &__list-item
+    max-width: 220px
+
+  &__link
+
+.payment-systems
+  display: flex
+  flex-direction: column
+  gap: 40px
+
+  &__title
+    text-transform: lowercase
+    color: #777777
+    font-weight: 500
+
+  &__list
+    display: flex
+    gap: 10px 20px
+    align-items: center
+
+  &__item
+
+.footer-socials
+  display: flex
+  flex-direction: column
+  gap: 40px
+
+  &__title
+    text-transform: lowercase
+    color: #777777
+    font-weight: 500
+
+  &__list
+    display: flex
+    align-items: center
+    gap: 20px
+
+  &__item
+
+  &__link
+    height: 42px
+    aspect-ratio: 1
+    display: flex
+    align-items: center
+    justify-content: center
+
+.partners
+  display: flex
+  flex-direction: column
+  gap: 40px
+
+  &__title
+    text-transform: lowercase
+    color: #777777
+    font-weight: 500
+
+  &__list
+    display: flex
+    gap: 20px
+    align-items: center
+
+  &__item
+
+.copyright
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  &__logo
+
+  &__text
+    font-weight: 400
+    font-size: 14px
+
+    &_year
+
+  &__links
+    display: flex
+    gap: 40px
+    font-size: 14px
+    font-weight: 200
+    color: lightseagreen
+
+    & a:hover
+      text-decoration: underline
