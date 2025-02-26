@@ -1,29 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
-
-*
-  box-sizing: border-box
-  font-family: "Noto Sans", serif
-  margin: 0
-  padding: 0
-
-body
-  background-color: #0f0f0f
-  color: #fafafa
-
-h2
-  font-weight: 600
-  font-size: 74px
-  line-height: 60px
-
-a
-  text-decoration: none
-  color: inherit
-  transition: .3s
-  &:hover
-    opacity: .8
-
-ul
-  list-style: none
+@import "global"
+@import "mixins"
+@import "colors"
 
 .container
   padding: 0 20px
@@ -41,33 +18,30 @@ ul
   opacity: .4
   margin: 20px 0
 
-
 .header
   position: fixed
   z-index: 25
   width: 100%
   transition: 0.3s
+  +display-flex(center, default)
+
 
   &__inner
-    display: flex
-    align-items: center
     height: 100px
-
+    +display-flex(center, default)
 
 .navbar
-  display: flex
-  justify-content: space-between
+  +display-flex(default, space-between)
 
   &__left
-    display: flex
+    +display-flex(center, default)
     gap: 100px
-    align-items: center
 
   &__logo
     &_link
 
     &_img
-
+      user-select: none
 
   &__city-selection
 
@@ -76,21 +50,19 @@ ul
   &__navigation
 
 .city-selection
-  display: flex
-  align-items: center
+  +display-flex(center, default)
   gap: 8px
-  border: 1px solid grey
+  border: 1px solid $grey
   border-radius: 10px
   height: 40px
   padding: 9px 14px 7px 17px
 
   &:hover
-    border: 1px solid #adff2f
+    border: 1px solid $grey
 
   &__location
-    display: flex
+    +display-flex(center, default)
     gap: 4px
-    align-items: center
 
   &__location-img
     img
@@ -101,38 +73,36 @@ ul
   &__city
     font-size: 12px
     font-weight: bold
-    color: #fafafa
+    color: $white
+    user-select: none
 
   &__arrow
     img
       filter: invert(53%) sepia(1%) saturate(2351%) hue-rotate(314deg) brightness(95%) contrast(78%)
 
 .navigation
-  display: flex
+  +display-flex(center, default)
   gap: 55px
-  align-items: center
+
   &__menu
 
   &__buttons
-    display: flex
-    align-items: center
+    +display-flex(center, default)
     gap: 10px
 
   &__btn
-    display: flex
-    align-items: center
-    justify-content: center
+    +display-flex(center, center)
     padding: 6px
     border-radius: 50%
     border: 1px solid transparent
 
     &:hover
-      border: 1px solid #adff2f
-
+      border: 1px solid $lime
 
   &__btn-img
     height: 22px
     aspect-ratio: 1
+    user-select: none
     filter: invert(100%) sepia(36%) saturate(2%) hue-rotate(317deg) brightness(108%) contrast(96%)
 
 .menu
@@ -141,13 +111,298 @@ ul
 
   &__item
     font-weight: bold
-    color: #fafafa
-
-.slider
-  height: 100vh
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)
+    color: $white
 
 
+.playbill
+  &__inner
+    margin-top: 50px
+    & .custom-hr
+      margin-top: 0
+
+  &__title
+    margin-bottom: 20px
+
+  &__header
+    +display-flex(start, space-between)
+
+  &__sort-buttons
+    display: flex
+    gap: 20px
+    user-select: none
+    align-items: baseline
+
+
+  &__devidor
+    height: 10px
+    aspect-ratio: 1
+    border: 1px solid $grey
+    border-radius: 50%
+
+
+  &__sort-btn
+    font-size: 24px
+    color: $light-grey
+    padding-bottom: 20px
+    transition: .2s ease-out
+    cursor: pointer
+    border-bottom: 3px solid $transparent
+    &:hover
+      color: $white
+
+
+    &_active
+      color: $white
+      border-bottom: 3px solid $lime
+
+
+  &__btn
+    display: flex
+    gap: 8px
+    padding: 4px 4px 4px 8px
+    transition: 0.3s
+    cursor: pointer
+    border-radius: 8px
+    &:hover
+      background-color: $dark-grey
+      border-radius: 24px
+
+  &__btn-title
+    font-size: 16px
+    line-height: 22px
+
+  &__btn-icon
+    background-color: $lime
+    border-radius: 50%
+    width: 24px
+    aspect-ratio: 1
+    +display-flex(center, center)
+    & img
+      width: 18px
+      transform: rotate(180deg)
+
+
+
+
+.news
+  &__title
+
+.news
+  margin-bottom: 50px
+
+  &__header
+    margin-top: 50px
+    +display-flex(center, space-between)
+
+  &__title
+
+  &__btn
+    display: flex
+    gap: 8px
+    padding: 4px 4px 4px 8px
+    transition: .3s
+    cursor: pointer
+    border-radius: 8px
+
+    &:hover
+      background-color: $dark-grey
+      border-radius: 24px
+
+  &__btn-title
+    font-size: 16px
+    line-height: 22px
+
+  &__btn-icon
+    background-color: $lime
+    border-radius: 50%
+    width: 24px
+    aspect-ratio: 1
+    +display-flex(center, center)
+
+    & img
+      width: 18px
+      transform: rotate(180deg)
+
+  &__slider
+    margin-top: 40px
+
+  &__nav-btns
+    margin-top: 20px
+    width: 100%
+    +display-flex(center, end)
+    gap: 20px
+    user-select: none
+
+  &__nav-btn:disabled
+    opacity: .5
+
+    &:hover
+      background-color: transparent
+
+  &__nav-btn
+    +display-flex(center, center)
+    height: 50px
+    width: 50px
+    background-color: $transparent
+    border: 1px solid $light-grey
+    border-radius: 50%
+    transition: .3s
+
+    &:hover
+      background-color: $dark-grey
+
+    & img
+      height: 18px
+      aspect-ratio: 1
+      filter: invert(49%) sepia(0%) saturate(17%) hue-rotate(238deg) brightness(95%) contrast(87%)
+
+    &_left
+
+    &_right
+      & img
+        transform: rotate(180deg)
+
+.news-slider
+  &__container
+    width: 100%
+  //display: flex
+
+  &__slide
+
+.news-card
+  border: 1px solid $dark-grey
+  border-radius: 12px
+  border-collapse: collapse
+  display: flex
+  gap: 10px
+  //max-width: 560px
+
+  &__top
+    position: relative
+
+  &__content
+    width: 560px
+    height: 350px
+    border-radius: 12px
+    overflow: hidden
+    position: relative
+
+  &__content-link
+    position: absolute
+    height: 100%
+    width: 100%
+    background-color: red
+
+    &:hover
+      opacity: 100%
+
+  &__content-fade
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, transparent 20%, transparent 100%)
+
+  &__content-image
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+  &__tag
+    position: absolute
+    z-index: 5
+    top: 10px
+    right: 10px
+    display: inline
+    padding: 4px 8px
+    background-color: $orange
+    border: 1px solid $light-orange
+    border-radius: 0 8px 0 8px
+    user-select: none
+
+  &__date
+    position: absolute
+    z-index: 5
+    bottom: 10px
+    left: 10px
+    display: flex
+    gap: 8px
+    opacity: .8
+
+  &__date-icon
+    user-select: none
+    padding-right: 1px
+
+  &__date-time
+    font-size: 18px
+    user-select: none
+
+
+  &__bottom
+    position: relative
+    padding: 20px
+
+  &__title
+    margin: 0 0 10px
+    min-height: 70px
+    max-height: 70px
+    padding: 3px 0
+    font-size: 24px
+    font-style: normal
+    font-weight: 700
+    line-height: 100%
+    color: $white
+    overflow: clip
+    text-overflow: ellipsis
+    user-select: none
+
+  &__desc
+    margin: 0 0 20px
+    min-height: 80px
+    max-height: 80px
+    user-select: none
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 16px
+    font-style: normal
+    font-weight: 500
+    line-height: 120%
+    color: $light-grey
+
+  &__btn-wrapper
+    position: absolute
+    bottom: 20px
+    right: 20px
+    +display-flex(center, end)
+
+  &__btn
+    display: flex
+    gap: 8px
+    padding: 4px 4px 4px 8px
+    transition: 0.3s
+    cursor: pointer
+    border-radius: 8px
+
+    &:hover
+      background-color: $dark-grey
+      border-radius: 24px
+
+  &__btn-title
+    font-size: 16px
+    line-height: 22px
+
+  &__btn-icon
+    background-color: $lime
+    border-radius: 50%
+    width: 24px
+    aspect-ratio: 1
+    +display-flex(default, center)
+
+    & img
+      width: 18px
+      //background-color: #20B2AA
+      transform: rotate(180deg)
 
 .impressions
   &__inner
@@ -170,12 +425,15 @@ ul
     position: relative
 
   &__item-link
+    &:hover
+      opacity: 100%
 
   &__image
     width: 100%
     height: 100%
     object-fit: cover
     transition: transform 0.3s ease
+
     &:hover
       transform: scale(1.05)
 
@@ -183,17 +441,15 @@ ul
   &__inner
 
   &__navigation
-    display: flex
+    +display-flex(default, space-between)
     gap: 20px
-    justify-content: space-between
     margin: 70px 0
 
   &__column
 
   &__payment-socials
-    display: flex
+    +display-flex(default, space-between)
     gap: 40px
-    justify-content: space-between
     margin: 60px 0 70px
 
   &__payment-systems
@@ -216,7 +472,7 @@ ul
   line-height: 20px
 
   &__title
-        color: #777
+    color: $light-grey
 
   &__list
     display: flex
@@ -237,7 +493,7 @@ ul
 
   &__title
     text-transform: lowercase
-    color: #777777
+    color: $light-grey
     font-weight: 500
 
   &__list
@@ -254,12 +510,11 @@ ul
 
   &__title
     text-transform: lowercase
-    color: #777777
+    color: $light-grey
     font-weight: 500
 
   &__list
-    display: flex
-    align-items: center
+    +display-flex(center, default)
     gap: 20px
 
   &__item
@@ -267,9 +522,7 @@ ul
   &__link
     height: 42px
     aspect-ratio: 1
-    display: flex
-    align-items: center
-    justify-content: center
+    +display-flex(center, center)
 
 .partners
   display: flex
@@ -278,22 +531,21 @@ ul
 
   &__title
     text-transform: lowercase
-    color: #777777
+    color: $light-grey
     font-weight: 500
 
   &__list
-    display: flex
+    +display-flex(center, default)
     gap: 20px
-    align-items: center
+
 
   &__item
 
 .copyright
-  display: flex
-  align-items: center
-  justify-content: space-between
+  +display-flex(center, space-between)
 
   &__logo
+    user-select: none
 
   &__text
     font-weight: 400

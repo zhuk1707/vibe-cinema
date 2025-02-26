@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vibe Cinema</title>
 
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="src/styles/styles.css">
+
 </head>
 <body>
 <header class="header">
@@ -63,16 +67,74 @@
     </div>
 </header>
 
-<div class="slider">
+<section style="height: 100vh; background-color: #20B2AA" class="">
 
-</div>
+</section>
 
-<div class="playbill">
-    Афиша
-</div>
+<section class="playbill">
+    <div class="container">
+        <div class="playbill__inner">
+            <h2 class="playbill__title">афиша</h2>
+
+            <div class="playbill__header">
+                <ul class="playbill__sort-buttons">
+                    <li class = 'playbill__sort-btn playbill__sort-btn_active'>все</li>
+                    <div class="playbill__devidor"></div>
+                    <li class = 'playbill__sort-btn'>примьеры</li>
+                    <div class="playbill__devidor"></div>
+                    <li class = 'playbill__sort-btn'>+vibe</li>
+                    <div class="playbill__devidor"></div>
+                    <li class = 'playbill__sort-btn'>детям</li>
+                    <div class="playbill__devidor"></div>
+
+                    <li class = 'playbill__sort-btn'>эксклюзивно</li>
+                </ul>
+                <div class="playbill__btn">
+                    <p class="playbill__btn-title">вся афиша</p>
+                    <div class="playbill__btn-icon">
+                        <img src="src/assets/arrow.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-hr"></div>
+        </div>
 
 
-<div class="impressions">
+    </div>
+</section>
+
+<section class="news">
+    <div class="container">
+        <div class="news__header">
+            <h2 class="news__title">новости</h2>
+            <div class="news__btn">
+                <p class="news__btn-title">все новости</p>
+                <div class="news__btn-icon">
+                    <img src="src/assets/arrow.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="custom-hr"></div>
+
+        <div class="news__slider news-slider swiper">
+            <div class="news-slider__container swiper-wrapper">
+                <!--dynamically loaded data-->
+            </div>
+        </div>
+
+        <div class="news__nav-btns">
+            <button class="news__nav-btn news__nav-btn_left">
+                <img src="src/assets/arrow.svg" alt="">
+            </button>
+            <button class="news__nav-btn news__nav-btn_right">
+                <img src="src/assets/arrow.svg" alt="">
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="impressions">
     <div class="container">
         <div class="impressions__inner">
             <h2 class="impressions__title">впечатления</h2>
@@ -143,7 +205,7 @@
             <div class="custom-hr"></div>
         </div>
     </div>
-</div>
+</section>
 
 <footer class="footer">
     <div class="container">
@@ -285,7 +347,7 @@
     </div>
 </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="src/scripts/main.js"></script>
 </body>
 </html>
